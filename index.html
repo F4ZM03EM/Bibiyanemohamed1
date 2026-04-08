@@ -41,7 +41,7 @@ background:#00bcd4;color:white;border-radius:15px;
 font-weight:bold;text-align:center;cursor:pointer;
 }
 
-/* POST */
+/* POSTS */
 .post{background:white;margin:15px;border-radius:15px;overflow:hidden;}
 .post-header{display:flex;padding:10px;align-items:center;}
 .avatar{width:40px;height:40px;border-radius:50%;}
@@ -84,11 +84,6 @@ background:rgba(0,0,0,0.8);
 color:white;padding:10px 20px;border-radius:30px;
 }
 
-.actions{
-display:flex;justify-content:space-around;
-padding:10px;color:#777;
-}
-
 /* PLANOS */
 .plans{margin:15px;}
 .plan{
@@ -98,7 +93,7 @@ display:flex;justify-content:space-between;
 margin-bottom:10px;position:relative;
 }
 
-.plan-left{display:flex;gap:10px;}
+.plan-left{display:flex;gap:10px;align-items:center;}
 .icon{width:40px;height:40px;background:#eee;border-radius:10px;display:flex;align-items:center;justify-content:center;}
 .fire{background:#ffe6c7;}
 
@@ -109,6 +104,7 @@ margin-bottom:10px;position:relative;
 
 .arrow{cursor:pointer;}
 .popular{border:2px solid orange;background:#fff7e6;}
+
 .badge{
 position:absolute;
 top:-10px;left:10px;
@@ -131,28 +127,97 @@ cursor:pointer;
 
 <body>
 
-<!-- AGE GATE -->
+<!-- AGE GATE (TEU CÓDIGO ORIGINAL) -->
 <div id="ageGate" style="
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:linear-gradient(#0b1c2c,#0e2a44);
-display:flex;align-items:center;justify-content:center;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(180deg,#0b1c2c,#0e2a44);
+display:flex;
+align-items:center;
+justify-content:center;
 z-index:99999;
+font-family:Arial;
 ">
 
-<div style="background:#12263a;padding:30px;border-radius:20px;color:white;text-align:center;">
+<div style="
+background:#12263a;
+padding:30px;
+border-radius:20px;
+text-align:center;
+color:white;
+width:90%;
+max-width:350px;
+box-shadow:0 0 40px rgba(0,0,0,0.5);
+">
 
-<h2>Verificação de Idade</h2>
-<p>Conteúdo para maiores de 18 anos</p>
+<div style="
+width:70px;
+height:70px;
+margin:auto;
+background:#00bcd4;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+box-shadow:0 0 20px #00bcd4;
+">
+🔒
+</div>
 
-<button onclick="entrar()">Sim, tenho +18</button>
-<button onclick="sair()">Não sou</button>
+<div style="
+margin-top:15px;
+background:#2c2c2c;
+display:inline-block;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
+color:#ffcc66;
+">
+✨ CONTEÚDO EXCLUSIVO
+</div>
+
+<h2 style="margin-top:15px;">Verificação de Idade</h2>
+
+<p style="color:#ccc;font-size:14px;">
+Este site contém conteúdo restrito para maiores de 18 anos.
+</p>
+
+<button onclick="entrar()" style="
+margin-top:15px;
+padding:15px;
+width:100%;
+background:linear-gradient(90deg,#00bcd4,#0097a7);
+border:none;
+border-radius:12px;
+color:white;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+">
+🛡️ Sim, tenho +18 anos
+</button>
+
+<button onclick="sair()" style="
+margin-top:10px;
+padding:15px;
+width:100%;
+background:#ccc;
+border:none;
+border-radius:12px;
+">
+Não, sou menor de idade
+</button>
 
 </div>
 </div>
 
+<!-- SITE -->
 <div id="siteContent" style="display:none;">
 
-<!-- PERFIL -->
 <div class="cover"></div>
 
 <div class="profile">
@@ -177,18 +242,13 @@ z-index:99999;
 <div class="cta" onclick="checkout199()">👑 QUERO SER VIP</div>
 </div>
 
-<!-- POST 1 -->
+<!-- POSTS -->
 <div class="post">
 <div class="post-header">
 <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
-<div class="post-info">
-<b>Bibiyane Mohamad</b><br>
-<span class="time">12h</span>
+<div class="post-info"><b>Bibiyane</b><br><span class="time">12h</span></div>
 </div>
-</div>
-
 <div class="post-text">Conteúdo exclusivo 🔥</div>
-
 <div class="post-img" style="background:url('https://i.postimg.cc/QxJkfkGQ/IMG-0726.jpg');">
 <div class="overlay">
 <div class="lock-icon">🔒</div>
@@ -197,18 +257,12 @@ z-index:99999;
 </div>
 </div>
 
-<!-- POST 2 -->
 <div class="post">
 <div class="post-header">
 <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
-<div class="post-info">
-<b>Bibiyane Mohamad</b><br>
-<span class="time">5h</span>
+<div class="post-info"><b>Bibiyane</b><br><span class="time">5h</span></div>
 </div>
-</div>
-
-<div class="post-text">Conteúdo novo 🔥 VIP 👑</div>
-
+<div class="post-text">Conteúdo novo 🔥 VIP</div>
 <div class="post-img" style="background:url('https://i.postimg.cc/HLqyYVDz/IMG-0724.jpg');">
 <div class="overlay">
 <div class="lock-icon">🔒</div>
@@ -249,7 +303,7 @@ z-index:99999;
 
 <script>
 function entrar(){
-localStorage.setItem("18","ok");
+localStorage.setItem("idade","ok");
 document.getElementById("ageGate").style.display="none";
 document.getElementById("siteContent").style.display="block";
 }
@@ -258,9 +312,11 @@ function sair(){
 window.location.href="https://google.com";
 }
 
-if(localStorage.getItem("18")=="ok"){
+window.onload=function(){
+if(localStorage.getItem("idade")==="ok"){
 document.getElementById("ageGate").style.display="none";
 document.getElementById("siteContent").style.display="block";
+}
 }
 
 function checkout199(){
