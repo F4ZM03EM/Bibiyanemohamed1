@@ -24,11 +24,13 @@ border:5px solid white;object-fit:cover;
 .stats{display:flex;justify-content:center;gap:20px;color:#777;margin:10px;}
 .name-box{display:flex;justify-content:center;gap:8px;align-items:center;}
 .name{font-size:24px;font-weight:bold;}
+
 .verified{
 background:#00a8cc;color:white;border-radius:50%;
 width:20px;height:20px;display:flex;align-items:center;justify-content:center;
 font-size:12px;
 }
+
 .username{color:#777;font-size:14px;}
 .status{color:#00a8cc;margin-top:5px;}
 .bio{padding:10px 20px;color:#444;}
@@ -46,7 +48,6 @@ cursor:pointer;
 .avatar{width:40px;height:40px;border-radius:50%;}
 .post-info{margin-left:10px;font-size:14px;}
 .time{color:#777;font-size:12px;}
-.menu{margin-left:auto;color:#777;font-size:20px;}
 .post-text{padding:10px;}
 
 .post-img{
@@ -67,10 +68,8 @@ background:rgba(0,0,0,0.35);
 
 .overlay{
 position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -82,8 +81,7 @@ z-index:2;
 width:80px;height:80px;
 background:white;border-radius:50%;
 display:flex;align-items:center;justify-content:center;
-font-size:35px;
-margin-bottom:15px;
+font-size:35px;margin-bottom:15px;
 }
 
 .lock-bar{
@@ -91,89 +89,45 @@ background:rgba(0,0,0,0.8);
 color:white;
 padding:12px 25px;
 border-radius:30px;
-font-size:14px;
-}
-
-.actions{
-display:flex;
-justify-content:space-around;
-padding:10px;
-color:#777;
 }
 
 /* PLANOS */
 .plans{margin:15px;}
-
-.title{
-color:#00a8cc;
-letter-spacing:2px;
-font-size:14px;
-margin-bottom:10px;
-}
+.title{color:#00a8cc;font-size:14px;}
 
 .plan{
 background:#f7f7f7;
 padding:15px;
 border-radius:15px;
 display:flex;
-align-items:center;
 justify-content:space-between;
-margin-bottom:12px;
+margin-bottom:10px;
 position:relative;
 }
 
-.plan-left{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.icon{
-width:40px;height:40px;
-background:#eaeaea;
-border-radius:10px;
-display:flex;align-items:center;justify-content:center;
-}
-
+.plan-left{display:flex;gap:10px;align-items:center;}
+.icon{width:40px;height:40px;background:#eee;border-radius:10px;display:flex;align-items:center;justify-content:center;}
 .fire{background:#ffe6c7;}
 
-.plan-name{font-weight:bold;font-size:16px;}
-
 .plan-right{text-align:right;}
-
-.price{font-weight:bold;font-size:18px;}
+.price{font-weight:bold;}
 .sub{font-size:12px;color:#777;}
 .kz{font-size:11px;color:#999;}
 
-.arrow{
-width:40px;height:40px;border-radius:50%;
-background:#ddd;
-display:flex;align-items:center;justify-content:center;
-cursor:pointer;
-}
-
-.gold{background:#f4b400;color:white;}
-
-.popular{
-border:2px solid #f4b400;
-background:#fff7e6;
-}
-
+.arrow{cursor:pointer;}
+.popular{border:2px solid orange;background:#fff7e6;}
 .badge{
 position:absolute;
 top:-10px;
-left:15px;
-background:#f4b400;
+left:10px;
+background:orange;
 color:white;
 padding:5px 10px;
 border-radius:10px;
 font-size:12px;
 }
 
-.bonus{font-size:14px;color:#444;margin-top:10px;}
-.info{font-size:12px;color:#777;margin-top:5px;}
-
-/* BOTÃO FIXO */
+/* FIXED */
 .fixed{
 position:fixed;
 bottom:10px;
@@ -187,35 +141,79 @@ border-radius:15px;
 font-weight:bold;
 cursor:pointer;
 }
-
-/* AGE GATE */
-#ageGate{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:linear-gradient(#0b1c2c,#0e2a44);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:99999;
-}
 </style>
 </head>
 
 <body>
 
-<!-- VERIFICAÇÃO -->
-<div id="ageGate">
-<div style="background:#12263a;padding:30px;border-radius:20px;color:white;text-align:center;">
+<!-- AGE GATE (TEU DESIGN) -->
+<div id="ageGate" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(180deg,#0b1c2c,#0e2a44);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+">
+
+<div style="
+background:#12263a;
+padding:30px;
+border-radius:20px;
+text-align:center;
+color:white;
+width:90%;
+max-width:350px;
+">
+
+<div style="
+width:70px;height:70px;margin:auto;
+background:#00bcd4;border-radius:20px;
+display:flex;align-items:center;justify-content:center;
+font-size:30px;
+">🔒</div>
+
+<div style="margin-top:15px;color:#ffcc66;">✨ CONTEÚDO EXCLUSIVO</div>
+
 <h2>Verificação de Idade</h2>
-<p>Conteúdo para maiores de 18 anos</p>
-<button onclick="entrar()">Sim, tenho +18</button>
+
+<p style="color:#ccc;">
+Este site contém conteúdo restrito para maiores de 18 anos.
+</p>
+
+<button onclick="entrar()" style="
+margin-top:15px;
+padding:15px;
+width:100%;
+background:#00bcd4;
+border:none;
+border-radius:12px;
+color:white;
+">
+🛡️ Sim, tenho +18 anos
+</button>
+
+<button onclick="sair()" style="
+margin-top:10px;
+padding:15px;
+width:100%;
+background:#ccc;
+border:none;
+border-radius:12px;
+">
+Não, sou menor
+</button>
+
 </div>
 </div>
 
+<!-- SITE -->
 <div id="siteContent" style="display:none;">
 
-<!-- PERFIL -->
 <div class="cover"></div>
 
 <div class="profile">
@@ -235,7 +233,7 @@ z-index:99999;
 <div class="username">@Bibiyanemohamad • Maputo 🇲🇿</div>
 <div class="status">Disponível agora</div>
 
-<div class="bio">Conteúdo exclusivo todos dias 🔥</div>
+<div class="bio">Conteúdo exclusivo 🔥</div>
 
 <div class="cta" onclick="checkout199()">👑 QUERO SER VIP</div>
 </div>
@@ -258,12 +256,6 @@ z-index:99999;
 <div class="lock-bar">Desbloqueie abaixo</div>
 </div>
 </div>
-
-<div class="actions">
-<div>♡ 723</div>
-<div>💬 201</div>
-<div>↗</div>
-</div>
 </div>
 
 <!-- PLANOS -->
@@ -271,7 +263,7 @@ z-index:99999;
 <h3 class="title">PLANOS</h3>
 
 <div class="plan">
-<div class="plan-left"><div class="icon">⚡</div><div class="plan-name">30 Dias</div></div>
+<div class="plan-left"><div class="icon">⚡</div>30 Dias</div>
 <div class="plan-right">
 <div class="price">199 MZN</div>
 <div class="sub">≈ 2,99 EUR</div>
@@ -282,36 +274,37 @@ z-index:99999;
 
 <div class="plan popular">
 <div class="badge">MAIS POPULAR</div>
-<div class="plan-left"><div class="icon fire">🔥</div><div class="plan-name">3 Meses</div></div>
+<div class="plan-left"><div class="icon fire">🔥</div>3 Meses</div>
 <div class="plan-right">
 <div class="price">297 MZN</div>
 <div class="sub">≈ 4,27 EUR</div>
 <div class="sub kz">≈ 3.700 Kz</div>
 </div>
-<div class="arrow gold" onclick="checkout297()">→</div>
+<div class="arrow" onclick="checkout297()">→</div>
 </div>
-
-<div class="bonus">🎁 WhatsApp incluído</div>
-<div class="info">🔒 Pagamento seguro</div>
 
 </div>
 
-<div class="fixed" onclick="checkout199()">
-Veja tudo por apenas 199 MZN →
-</div>
+<div class="fixed" onclick="checkout199()">Ver tudo por 199 MZN →</div>
 
 </div>
 
 <script>
 function entrar(){
-localStorage.setItem("18","ok");
+localStorage.setItem("idade","ok");
 document.getElementById("ageGate").style.display="none";
 document.getElementById("siteContent").style.display="block";
 }
 
-if(localStorage.getItem("18")=="ok"){
+function sair(){
+window.location.href="https://google.com";
+}
+
+window.onload=function(){
+if(localStorage.getItem("idade")==="ok"){
 document.getElementById("ageGate").style.display="none";
 document.getElementById("siteContent").style.display="block";
+}
 }
 
 function checkout199(){
